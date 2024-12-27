@@ -5,7 +5,13 @@ import { Connection, clusterApiUrl, PublicKey } from "@solana/web3.js";
 const WalletConnect = () => {
   const [ethAccount, setEthAccount] = useState(null);
   const [solAccount, setSolAccount] = useState(null);
+  const [ Visible , setVisible ] = useState(true);
   const [error, setError] = useState("");
+
+
+  const handleclick = ( ) => {
+    setVisible(false);
+  }
 
   // Connect to MetaMask
   const connectMetaMask = async () => {
@@ -38,8 +44,16 @@ const WalletConnect = () => {
   };
 
   return (
+    <>
+    {Visible &&(
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", }} className="wallet">
-      <h2>Connect Wallet</h2>
+      <div className="Wallet-header" >
+         <h2>Connect Wallet</h2> 
+         <button class="cross-button" onClick={()=> handleclick()} ></button>
+
+      
+      </div>
+     
 
       {/* MetaMask Connection */}
       <button
@@ -62,6 +76,8 @@ const WalletConnect = () => {
       {/* Error Message */}
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
+    )}
+    </>
   );
 };
 

@@ -16,3 +16,48 @@
   left: 50%;
   transform: translate(-50%, -50%)
 }
+
+p {
+  word-wrap: break-word; 
+}
+
+
+.cross-button {
+  position: relative;
+  width: 30px; /* Size of the button */
+  height: 30px;
+  background: none; /* No background color */
+  border: none; /* Remove border */
+  cursor: pointer; /* Show a pointer cursor */
+  outline: none; /* Remove focus outline */
+}
+
+.cross-button::before,
+.cross-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px; /* Length of the cross lines */
+  height: 2px; /* Thickness of the cross lines */
+  background-color: black; /* Color of the cross */
+  transform-origin: center;
+}
+
+.cross-button::before {
+  transform: translate(-50%, -50%) rotate(45deg); /* First line */
+}
+
+.cross-button::after {
+  transform: translate(-50%, -50%) rotate(-45deg); /* Second line */
+}
+
+.cross-button:hover::before,
+.cross-button:hover::after {
+  background-color: red; /* Change color on hover */
+}
+
+.Wallet-header{
+  display: flex;
+  justify-content: space-between;
+}
