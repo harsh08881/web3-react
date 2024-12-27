@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { ethers } from "ethers";
-import { Connection, clusterApiUrl, PublicKey } from "@solana/web3.js";
+import './wallet.css'
+// import { ethers } from "ethers";
+// import { Connection, clusterApiUrl, PublicKey } from "@solana/web3.js";
 
 const WalletConnect = () => {
   const [ethAccount, setEthAccount] = useState(null);
@@ -38,6 +39,7 @@ const WalletConnect = () => {
       const response = await window.solana.connect();
       setSolAccount(response.publicKey.toString());
       setError("");
+      console.log(response.publicKey.toString());
     } catch (err) {
       setError(`Phantom connection failed: ${err.message}`);
     }
@@ -49,7 +51,7 @@ const WalletConnect = () => {
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", }} className="wallet">
       <div className="Wallet-header" >
          <h2>Connect Wallet</h2> 
-         <button class="cross-button" onClick={()=> handleclick()} ></button>
+         <button className="cross-button" onClick={()=> handleclick()} ></button>
 
       
       </div>
