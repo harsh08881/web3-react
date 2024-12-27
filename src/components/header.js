@@ -21,7 +21,7 @@ const Header = () => {
       </header>
     </div>
     <div>
-      {ShowComponent && <WalletConnect/>}
+      {ShowComponent && <WalletConnect ShowComponent={ShowComponent} setShowComponent={setShowComponent}/>}
     </div>
     </>
   )

@@ -3,15 +3,14 @@ import './wallet.css'
 // import { ethers } from "ethers";
 // import { Connection, clusterApiUrl, PublicKey } from "@solana/web3.js";
 
-const WalletConnect = () => {
+const WalletConnect = ({ ShowComponent, setShowComponent }) => {
   const [ethAccount, setEthAccount] = useState(null);
   const [solAccount, setSolAccount] = useState(null);
-  const [ Visible , setVisible ] = useState(true);
   const [error, setError] = useState("");
 
 
   const handleclick = ( ) => {
-    setVisible(false);
+    setShowComponent(false);
   }
 
   // Connect to MetaMask
@@ -47,7 +46,7 @@ const WalletConnect = () => {
 
   return (
     <>
-    {Visible &&(
+    
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", }} className="wallet">
       <div className="Wallet-header" >
          <h2>Connect Wallet</h2> 
@@ -78,7 +77,6 @@ const WalletConnect = () => {
       {/* Error Message */}
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
-    )}
     </>
   );
 };
