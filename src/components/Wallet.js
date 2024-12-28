@@ -16,17 +16,33 @@ const WalletConnect = ({ ShowComponent, setShowComponent }) => {
   // Connect to MetaMask
   const connectMetaMask = async () => {
     try {
-      if (!window.ethereum) {
-        setError("MetaMask is not installed.");
+      let metamaskProvider;
+  
+      // Check if multiple providers exist
+      if (window.ethereum.providers) {
+        // Look for MetaMask explicitly
+        metamaskProvider = window.ethereum.providers.find(provider => provider.isMetaMask);
+      } else if (window.ethereum.isMetaMask) {
+        // Single provider setup
+        metamaskProvider = window.ethereum;
+      }
+  
+      // If MetaMask is not found, show an error
+      if (!metamaskProvider) {
+        setError("MetaMask is not installed or not detected as the active wallet.");
         return;
       }
-      const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+  
+      // Request accounts using MetaMask's provider
+      const accounts = await metamaskProvider.request({ method: "eth_requestAccounts" });
       setEthAccount(accounts[0]);
-      setError("");
+      setError(""); // Clear any errors
     } catch (err) {
       setError(`MetaMask connection failed: ${err.message}`);
     }
   };
+  
+  
 
   // Connect to Phantom
   const connectPhantom = async () => {
