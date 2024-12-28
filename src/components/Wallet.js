@@ -3,7 +3,7 @@ import './wallet.css'
 // import { ethers } from "ethers";
 // import { Connection, clusterApiUrl, PublicKey } from "@solana/web3.js";
 
-const WalletConnect = ({ ShowComponent, setShowComponent }) => {
+const WalletConnect = ({ ShowComponent, setShowComponent , setIsConnected, checkWalletConnection }) => {
   const [ethAccount, setEthAccount] = useState(null);
   const [solAccount, setSolAccount] = useState(null);
   const [error, setError] = useState("");
@@ -37,6 +37,8 @@ const WalletConnect = ({ ShowComponent, setShowComponent }) => {
       const accounts = await metamaskProvider.request({ method: "eth_requestAccounts" });
       setEthAccount(accounts[0]);
       setError(""); // Clear any errors
+      setIsConnected(true);
+      checkWalletConnection();
     } catch (err) {
       setError(`MetaMask connection failed: ${err.message}`);
     }

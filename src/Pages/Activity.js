@@ -6,7 +6,6 @@ const Activity = () => {
     
   return (
     <div>
-      
     </div>
   )
 }

@@ -62,3 +62,28 @@ p {
   display: flex;
   justify-content: space-between;
 }
+
+/* Disconnect Wallet button */
+.disconnect-btn {
+  margin-left: 10px;
+  font-size: 1em;
+  padding: 10px 20px;
+  background-color: #ff6b6b; /* Distinct color to indicate disconnect */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.disconnect-btn:hover {
+  background-color: #ff4d4d;
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.disconnect-btn:active {
+  background-color: #e63e3e;
+  transform: scale(0.95); /* Slight shrink effect on click */
+}
+
