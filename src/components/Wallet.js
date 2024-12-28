@@ -58,7 +58,7 @@ const WalletConnect = ({ ShowComponent, setShowComponent }) => {
 
       {/* MetaMask Connection */}
       <button
-        onClick={connectMetaMask}
+        onClick={() =>connectMetaMask()}
         style={{ margin: "10px", padding: "10px 20px", backgroundColor: "#f6851b", color: "white", border: "none", borderRadius: "5px" }}
       >
         Connect MetaMask
@@ -67,7 +67,7 @@ const WalletConnect = ({ ShowComponent, setShowComponent }) => {
 
       {/* Phantom Connection */}
       <button
-        onClick={connectPhantom}
+        onClick={() => connectPhantom()}
         style={{ margin: "10px", padding: "10px 20px", backgroundColor: "#6826dd", color: "white", border: "none", borderRadius: "5px" }}
       >
         Connect Phantom
