@@ -14,7 +14,7 @@ const WalletConnect = ({
   const [solAccount, setSolAccount] = useState(null);
   const [error, setError] = useState("");
 
-  const { isMetaMaskInstalled, isPhantomInstalled } = useWalletChecker();
+  const { isMetaMaskInstalled, isPhantomInstalled ,isCoinbaseWalletInstalled } = useWalletChecker();
 
   const handleclick = () => {
     setShowComponent(false);
@@ -136,6 +136,29 @@ const WalletConnect = ({
           </span>
         </button>
         {solAccount && <p>Connected Phantom Account: {solAccount}</p>}
+
+        <button
+          onClick={() => connectPhantom()}
+          style={{
+            margin: "10px",
+            padding: "10px 20px",
+            backgroundColor: "#FFC800",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+          }}
+        >
+          Connect Coinbase{" "}
+          <span
+            style={{
+              fontWeight: "bold",
+              marginLeft: "5px",
+              color: isCoinbaseWalletInstalled ? "#00ff00" : "#ffffff",
+            }}
+          >
+            {isCoinbaseWalletInstalled ? "Detect" :"Missing"}
+          </span>
+        </button>
 
         {/* Error Message */}
         {error && <p style={{ color: "red" }}>{error}</p>}
