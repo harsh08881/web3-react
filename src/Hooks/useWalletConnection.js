@@ -8,7 +8,7 @@ const useWallet = () => {
  
     const checkWalletConnection = async () => {
       try {
-        if (window.ethereum.selectedAddress) {
+        if (window.ethereum) {
           const accounts = await window.ethereum.request({ method: "eth_accounts" });
           if (accounts.length > 0) {
             setIsConnected(true);
@@ -24,7 +24,7 @@ const useWallet = () => {
     };
 
   useEffect(()=>{
-    // checkWalletConnection();
+    checkWalletConnection();
   },[]);
 
   // Disconnect wallet
