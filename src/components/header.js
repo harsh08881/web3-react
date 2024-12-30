@@ -34,6 +34,7 @@ const Header = () => {
           </nav>
           {isConnected ? (
             <div >
+              {console.log(walletAddress)};
               <button disabled className="header-wallet" onClick={() => {}}>
                 Connected: {walletAddress.slice(0, 6)}...
                 {walletAddress.slice(-4)}
