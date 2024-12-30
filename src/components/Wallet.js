@@ -67,6 +67,9 @@ const WalletConnect = ({
       }
       const response = await window.solana.connect();
       setSolAccount(response.publicKey.toString());
+      localStorage.setItem('user', JSON.stringify(response.publicKey.toString()));
+      setIsConnected(true);
+      checkWalletConnection();
       setError("");
       console.log(response.publicKey.toString());
     } catch (err) {
