@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import LoadingSpinner from './loading';
 import axios from 'axios';
 
 const Holding = () => {
@@ -30,7 +31,7 @@ const Holding = () => {
     fetchHoldings();
   }, [apiUrl, apiKey]);
 
-  if (loading) return <div style={styles.loading}>Loading...</div>;
+  if (loading) return <LoadingSpinner/>;
   if (error) return <div style={styles.error}>{error}</div>;
 
   return (
