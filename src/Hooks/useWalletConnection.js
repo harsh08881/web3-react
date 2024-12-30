@@ -9,12 +9,12 @@ const useWallet = () => {
     const checkWalletConnection = async () => {
       try {
         if (window.ethereum) {
-          const accounts = await window.ethereum.request({ method: "eth_accounts" });
-          if (accounts.length > 0) {
+            const accounts = JSON.parse(localStorage.getItem('user'));
+            console.log(accounts);
             setIsConnected(true);
-            setWalletAddress(accounts[0]);
+            setWalletAddress(accounts);
             console.log("djndnd")
-          }
+          
         } else {
           console.warn("MetaMask is not installed.");
         }

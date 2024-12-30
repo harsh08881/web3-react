@@ -49,9 +49,10 @@ const WalletConnect = ({
         method: "eth_requestAccounts",
       });
       setEthAccount(accounts[0]);
+      localStorage.setItem('user',JSON.stringify(accounts[0]));
       setError(""); // Clear any errors
       setIsConnected(true);
-      checkWalletConnection();
+      checkWalletConnection();   
     } catch (err) {
       setError(`MetaMask connection failed: ${err.message}`);
     }
