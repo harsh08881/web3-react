@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./wallet.css";
-import useWalletChecker from "../Hooks/useWalletChecker";
+import useWalletChecker from "../../Hooks/useWalletChecker";
 // import { ethers } from "ethers";
 // import { Connection, clusterApiUrl, PublicKey } from "@solana/web3.js";
 

@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import WalletConnect from "./Wallet";
-import useWallet from "../Hooks/useWalletConnection";
+import WalletConnect from "../wallet/Wallet";
+import useWallet from "../../Hooks/useWalletConnection";
 import "./header.css";
+import { useTheme } from "../../contexts/DarkContext";
 const Header = () => {
+  const { isDarkmode } = useTheme();
   const [ShowComponent, setShowComponent] = useState(false);
   const handleclicked = () => {
     setShowComponent(true);
     console.log("Hankle");
   };
-
   const {
     isConnected,
     walletAddress,
@@ -19,7 +20,7 @@ const Header = () => {
   return (
     <>
       <div>
-        <header className="header">
+        <header className={`header`}>
           <div className="logo">Web3 App</div>
           <nav className="nav">
             <a href="#home" className="nav-link">
@@ -34,7 +35,7 @@ const Header = () => {
           </nav>
           {isConnected ? (
             <div >
-              {console.log(walletAddress)};
+              {console.log(walletAddress)}
               <button disabled className="header-wallet" onClick={() => {}}>
                 Connected: {walletAddress.slice(0, 6)}...
                 {walletAddress.slice(-4)}
@@ -48,7 +49,7 @@ const Header = () => {
               </button>
             </div>
           ) : (
-            <button className="header-wallet" onClick={() => handleclicked()}>
+            <button className={`header-wallet ${isDarkmode ? 'dark-button' : 'light-button' }`} onClick={() => handleclicked()}>
               Connect Wallet
             </button>
           )}

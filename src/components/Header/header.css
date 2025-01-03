@@ -59,3 +59,11 @@
 }
 
 /* WalletConnect modal (when visible) */
+
+.dark-button {
+  color: green;
+}
+
+.light-button{
+  color: black;
+}

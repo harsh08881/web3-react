@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import LoadingSpinner from './loading';
+import LoadingSpinner from '../Loader/loading';
 import axios from 'axios';
 
 const Holding = () => {
