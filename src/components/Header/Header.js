@@ -3,8 +3,7 @@ import WalletConnect from "../wallet/Wallet";
 import useWallet from "../../Hooks/useWalletConnection";
 import "./header.css";
 import { useTheme } from "../../contexts/DarkContext";
-const Header = () => {
-  const { isDarkmode } = useTheme();
+const Header = ({ isDarkMode , toggleTheme }) => {
   const [ShowComponent, setShowComponent] = useState(false);
   const handleclicked = () => {
     setShowComponent(true);
@@ -20,7 +19,7 @@ const Header = () => {
   return (
     <>
       <div>
-        <header className={`header`}>
+        <header className={`header ${isDarkMode ? "dark-mode" : "light-mode"}`}>
           <div className="logo">Web3 App</div>
           <nav className="nav">
             <a href="#home" className="nav-link">
@@ -49,10 +48,14 @@ const Header = () => {
               </button>
             </div>
           ) : (
-            <button className={`header-wallet ${isDarkmode ? 'dark-button' : 'light-button' }`} onClick={() => handleclicked()}>
+            <button className={`header-wallet`} onClick={() => handleclicked()}>
               Connect Wallet
             </button>
           )}
+           <label className="switch">
+           <input type="checkbox" checked={isDarkMode} onChange={toggleTheme} />
+           <span className="slider"></span>
+           </label>
         </header>
       </div>
       <div>
@@ -62,10 +65,12 @@ const Header = () => {
             setShowComponent={setShowComponent}
             setIsConnected={setIsConnected}
             checkWalletConnection={checkWalletConnection}
+            isDarkMode={isDarkMode}
           />
         )}
-      </div>
+      </div> 
     </>
+
   );
 };
 

@@ -6,12 +6,10 @@ import { ThemeProvider , useTheme } from './contexts/DarkContext'
 
 const MainApp = () => {
   const { isDarkMode, toggleTheme } = useTheme();
+  console.log(isDarkMode, "Mainapp")
   return (
     <>
     <div>
-    <button onClick={toggleTheme}>
-        {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-      </button>
       <Home/>
       <Activity/>
     </div>

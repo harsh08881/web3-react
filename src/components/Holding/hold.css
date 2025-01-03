@@ -1,0 +1,112 @@
+/* General Container Styles */
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9; /* Light background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #333; /* Dark text color */
+}
+
+/* Title Styles */
+.title {
+  text-align: center;
+  color: #333; /* Dark text color */
+  margin-bottom: 20px;
+}
+
+/* List and List Item Styles */
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.token-name {
+  font-weight: bold;
+  color: #555;
+}
+
+.token-balance {
+  color: #007BFF;
+}
+
+/* Loading and Error Messages */
+.loading {
+  text-align: center;
+  color: #007BFF;
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+.error {
+  text-align: center;
+  color: red;
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+/* Dark Mode Styles */
+.container-dark {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #1e1e1e; /* Dark background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  font-family: Arial, sans-serif;
+  color: #f5f5f5; /* Light text color */
+}
+
+/* Title Styles for Dark Mode */
+.title-dark {
+  text-align: center;
+  color: #f5f5f5; /* Light text color */
+  margin-bottom: 20px;
+}
+
+/* List and List Item Styles for Dark Mode */
+.list-dark {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-item-dark {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #444; /* Subtle border for separation */
+}
+
+.token-name-dark {
+  font-weight: bold;
+  color: #f5f5f5;
+}
+
+.token-balance-dark {
+  color: #1e90ff; /* Light blue for balance */
+}
+
+/* Loading Spinner Styles for Dark Mode */
+.loading-dark {
+  text-align: center;
+  color: #1e90ff;
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+/* Error Message Styles for Dark Mode */
+.error-dark {
+  text-align: center;
+  color: #ff4d4f; /* Bright red for errors */
+  margin-top: 50px;
+  font-size: 18px;
+}
