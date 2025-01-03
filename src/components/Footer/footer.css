@@ -1,0 +1,71 @@
+/* Default Footer Styles (Light Mode) */
+.footer {
+    background-color: #f1f1f1;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Footer content */
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Social icons container */
+  .social-icons {
+    margin-top: 10px;
+  }
+  
+  /* Styling the social icons */
+  .social-icon {
+    color: black;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #2196F3;
+  }
+  
+  .social-icon:active {
+    color: #0b7dda;
+  }
+  
+  /* Dark Mode Styles */
+  .footer.dark-mode {
+    background-color: #333;
+    color: white;
+  }
+  
+  .footer.dark-mode .social-icon {
+    color: white;
+  }
+  
+  .footer.dark-mode .social-icon:hover {
+    color: #2196F3;
+  }
+  
+  .footer.dark-mode .social-icon:active {
+    color: #0b7dda;
+  }
+  
+  /* Responsive styling (optional) */
+  @media (max-width: 768px) {
+    .footer-content {
+      font-size: 14px;
+    }
+  
+    .social-icon {
+      font-size: 16px;
+      margin: 0 10px;
+    }
+  }
+  

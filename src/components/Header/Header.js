@@ -36,7 +36,7 @@ const Header = ({ isDarkMode , toggleTheme }) => {
             <div >
               {console.log(walletAddress)}
               <button disabled className="header-wallet" onClick={() => {}}>
-                Connected: {walletAddress.slice(0, 6)}...
+              {walletAddress.slice(0, 6)}...
                 {walletAddress.slice(-4)}
               </button>
               <button
